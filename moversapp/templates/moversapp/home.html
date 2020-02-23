@@ -1,0 +1,62 @@
+{% extends 'moversapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% load static %}
+
+
+
+<div class="container-fluid">
+
+    <!-- Clubs -->
+
+    <div class="row">
+        <div class="page-header">
+            <h3 class="text-primary text-center text-head"><b>DRIVERS</b></h3>
+        </div>
+
+
+
+
+
+
+{% load static %}
+<link rel="stylesheet" href="" type="text/css">
+
+
+</div>
+
+        <br>
+
+        {% if cbs %}
+            {% for c in cbs %}
+    <div class="col-sm-3">
+        <div class="panel panel-primary">
+            <div class="panel-heading active">
+                <h3 class="text-danger">{{ v.name }}</h3>
+                <p>{{ v.chair }}</p>
+            </div>
+
+            <div class="panel-body">
+                <p>{{ v.desc }}</p>
+            </div>
+
+
+
+        </div>
+    </div>
+            {% endfor %}
+    {% endif %}
+
+
+    </div>
+
+
+    {% include 'skulapp/footer.html' %}
+
+{% endblock %}
+
+
+</div>

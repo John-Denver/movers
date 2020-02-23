@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    </head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <!-- Header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sideNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="">Movers</a>
+        </div>
+
+        <!-- Items -->
+        <div class="collapse navbar-collapse" id="sideNavBar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href=""><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{% url 'moversapp:add_vehicle' %}">
+                        <span class="glyphicon glyphicon-fire" aria-hidden="true"></span> add vehicle
+                    </a>
+                </li>
+
+                {% if user.is_authenticated %}
+
+
+                <li>
+                    <a href="{% url 'moversapp:logout' %}">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp;Log out
+                    </a>
+                </li>
+
+                {% else %}
+
+                <li>
+                    <a href="{% url 'moversapp:login_driver' %}">
+                        <span class="glyphicon glyphicon-gear" aria-hidden="true"></span>&nbsp;Log in
+                    </a>
+                </li>
+
+                {% endif %}
+
+
+                <li>
+                    <a href="">
+                        <span class="glyphicon glyphicon-gears" aria-hidden=""></span>System help
+                    </a>
+                </li>
+
+            </ul>
+
+
+
+        </div>
+
+    </div>
+</nav>
+
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>
+
